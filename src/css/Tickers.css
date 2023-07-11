@@ -1,0 +1,55 @@
+/* Tickers.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+td {
+  padding: 10px;
+  border-bottom: none; /* Add a black line at the bottom of each table cell */
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #0099ff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.tickers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tickers-table {
+/* Set the maximum width of the table */
+  width: 50%; /* Set the width to 100% to allow centering */
+  /* Add any other desired styles */
+}
+
+.black-line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
