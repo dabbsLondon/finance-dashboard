@@ -1,47 +1,47 @@
 .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .table th,
-  .table td {
-    padding: 8px;
-    border: 1px solid #f5f5f5; /* Update to match the background color of the header */
-    text-align: left;
-  }
-  
-  .table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-  
-  .green-triangle {
-    color: green;
-  }
-
-  /* HeaderTableComponent.css */
-.green-percentage {
-  color: green;
+  width: 100%;
+  border-collapse: collapse;
+  color: #f5f5f5; /* Text color */
+  background-color: #202020; /* Background color */
 }
 
-.red-percentage {
-  color: red;
+.table th,
+.table td {
+  padding: 8px;
+  border: none; /* Removed the border */
+  text-align: left;
 }
 
-/* HeaderTableComponent.css */
+.table th {
+  background-color: #333333; /* Darker background for header row */
+  font-weight: bold;
+}
+
+.green-triangle {
+  color: #77dd77; /* Green color for positive values, you can adjust as needed */
+}
+
 .red-triangle {
-  color: red;
+  color: #FF0000; /* Red color for negative values, you can adjust as needed */
   transform: rotate(180deg);
 }
 
-/* Assuming you have a separate stylesheet named HeaderTableComponent.css */
+.green-percentage {
+    color: #00FF00; /* Brighter green */
+    font-weight: bold; /* Bold text */
+}
+
+.red-percentage {
+  color: #FF0000; /* Red color for negative values, you can adjust as needed */
+}
 
 .green-text {
-  color: green;
+  color: #00FF00; /* Brighter green */
+  font-weight: bold; /* Bold text */
 }
 
 .red-text {
-  color: red;
+  color: #FF0000; /* Red color for negative values, you can adjust as needed */
 }
 
 .loading-spinner {
@@ -52,17 +52,18 @@
   width: 20px;
   height: 20px;
   margin: 0 2px; /* Adjust the margin as needed */
-  border: 3px solid #ccc;
-  border-top-color: #333;
+  border: 3px solid #ccc; /* Spinner color */
+  border-top-color: #333; /* Top spinner color */
   border-radius: 50%;
   animation: spin 1s linear infinite;
+  background-color: #202020; /* Background color */
 }
 
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+      transform: rotate(360deg);
   }
 }

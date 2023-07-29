@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/HeaderTableComponent.css'; // Assuming you have a separate stylesheet named HeaderTableComponent.css
+import '../css/HeaderTableComponent.css';
 
 const TableComponent = ({ summaryData }) => {
   const renderTableContent = () => {
@@ -16,11 +16,11 @@ const TableComponent = ({ summaryData }) => {
       );
     }
 
-    const currentValue = summaryData?.columns[1]?.values[0];
-    const totalPercentageGain = summaryData?.columns[5]?.values[0];
-    const totalGain = summaryData?.columns[3]?.values[0];
-    const dayGain = summaryData?.columns[4]?.values[0];
-    const dayGainPercentage = summaryData?.columns[6]?.values[0];
+    const currentValue = parseFloat(summaryData?.columns[1]?.values[0]);
+    const totalPercentageGain = parseFloat(summaryData?.columns[5]?.values[0]);
+    const totalGain = parseFloat(summaryData?.columns[3]?.values[0]);
+    const dayGain = parseFloat(summaryData?.columns[4]?.values[0]);
+    const dayGainPercentage = parseFloat(summaryData?.columns[6]?.values[0]);
 
     const formattedCurrentValue = `$${currentValue.toFixed(2)}`;
     const formattedTotalPercentageGain = `${totalPercentageGain.toFixed(2)}%`;

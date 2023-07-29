@@ -9,6 +9,8 @@ const DataSources = () => {
     gbpticker: 'http://localhost:8000/api/gbpTicker',
     holdings: 'http://localhost:8000/api/holdings',
     instrumentValues: 'http://localhost:8000/api/stockData/Day',
+    gainData: 'http://localhost:8000/api/gainData',
+    treeMap: 'http://localhost:8000/api/holdingsTree',
     // Add more key-value pairs as needed
   };
 

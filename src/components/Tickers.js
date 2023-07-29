@@ -30,24 +30,27 @@ const Tickers = ({ items }) => {
       <table className="tickers-table">
         <tbody>
           <tr>
-            {validItems.map((item, index) => (
-              <td key={index}>
-                <span>
-                  {item.name} (
-                  <span
-                    className={item.percentage_difference >= 0 ? "green" : "red"}
-                  >
-                    {item.percentage_difference}
+            {validItems.map((item, index) => {
+              const percentage_difference = parseFloat(item.percentage_difference);
+              return (
+                <td key={index}>
+                  <span>
+                    {item.name} (
+                    <span
+                      className={percentage_difference >= 0 ? "green" : "red"}
+                    >
+                      {item.percentage_difference}
+                    </span>
+                    )
                   </span>
-                  )
-                </span>
-                <span
-                  className={item.percentage_difference >= 0 ? "green" : "red"}
-                >
-                  {item.percentage_difference > 0 ? "▲" : "▼"}
-                </span>
-              </td>
-            ))}
+                  <span
+                    className={percentage_difference >= 0 ? "green" : "red"}
+                  >
+                    {percentage_difference > 0 ? "▲" : "▼"}
+                  </span>
+                </td>
+              );
+            })}
           </tr>
         </tbody>
       </table>

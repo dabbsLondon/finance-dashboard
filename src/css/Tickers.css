@@ -3,20 +3,23 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 auto;
+  color: #f5f5f5; /* Text color */
+  background-color: #202020; /* Background color */
 }
 
 td {
   padding: 10px;
-  border-bottom: none; /* Add a black line at the bottom of each table cell */
+  border-bottom: none; /* Removed border */
 }
 
 .spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: #0099ff;
+  border: 4px solid rgba(255, 255, 255, 0.1); /* Adjusted spinner color */
+  border-left-color: #0099ff; /* Spinner left color, adjust as needed */
   border-radius: 50%;
   width: 20px;
   height: 20px;
   animation: spin 1s linear infinite;
+  background-color: #202020; /* Background color */
 }
 
 @keyframes spin {
@@ -29,27 +32,30 @@ td {
 }
 
 .green {
-  color: green;
+  color: #00FF00; /* Brighter, more saturated green */
+  font-weight: bold; /* Bold text */
 }
 
 .red {
-  color: red;
+  color: #FF0000; /* Brighter, more saturated red */
+  font-weight: bold; /* Bold text */
 }
 
 .tickers-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #202020; /* Background color */
 }
 
 .tickers-table {
-/* Set the maximum width of the table */
   width: 50%; /* Set the width to 100% to allow centering */
-  /* Add any other desired styles */
+  color: #f5f5f5; /* Text color */
+  background-color: #202020; /* Background color */
 }
 
 .black-line {
   width: 100%;
   height: 1px;
-  background-color: black;
+  background-color: #333333; /* Adjusted to darker line color */
 }
