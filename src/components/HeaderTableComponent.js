@@ -41,13 +41,13 @@ const TableComponent = ({ summaryData }) => {
       <tr>
         <td>
           {formattedCurrentValue}{' '}
-          <span className={triangleClassName}>&#9650;</span>{' '}
+          {totalGainPositive ? <span className="green-triangle">&#9650;</span> : <span className="red-triangle">&#9660;</span>}{' '}
           <span className={totalGainClassName}>{formattedTotalGain} ({formattedTotalPercentageGain})</span>
         </td>
         <td>
         {formattedDayGain} <span className={dayGainClassName}> ({formattedDayGainPercentage})</span>{' '}
-          {dayGainPositive && <span className="green-triangle">&#9650;</span>} 
-          {!dayGainPositive && <span className="red-triangle">&#9650;</span>}
+        {dayGainPositive && <span className="green-triangle">&#9650;</span>} 
+        {!dayGainPositive && <span className="red-triangle">&#9660;</span>}
         </td>
       </tr>
     );

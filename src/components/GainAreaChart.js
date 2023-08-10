@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
-import chroma from 'chroma-js';
 import moment from 'moment';
 
 const GainAreaChart = ({ data }) => {
   const [loading, setLoading] = useState(true);
+  const items_to_slice = 2
 
   useEffect(() => {
     console.log('Data:', data);
@@ -24,12 +24,13 @@ const GainAreaChart = ({ data }) => {
   const gainData = gainDataset.data;
 
   const sortedData = gainData.sort((a, b) => a.x.localeCompare(b.x));
-
-  const reversedData = sortedData.reverse();
-  const reversedLabels = reversedData.map(item => moment(item.x).format('HH:mm'));
+  const startingIndex = sortedData.length - 20;
+  const slicedData = sortedData.slice(items_to_slice,startingIndex);
+  const reversedLabels = sortedData.map(item => moment(item.x).format('HH:mm'));
+  const slicedLabels = reversedLabels.slice(items_to_slice,startingIndex)
 
   const chartData = {
-    labels: reversedLabels,
+    labels: slicedLabels,
     datasets: [
       {
         label: 'Day Gain',
@@ -45,7 +46,7 @@ const GainAreaChart = ({ data }) => {
         pointHoverBorderColor: 'rgba(255, 255, 255, 1)',
         pointHitRadius: 10,
         pointBorderWidth: 2,
-        data: reversedData.map(item => item.y),
+        data: slicedData.map(item => item.y),
       },
     ],
   };
