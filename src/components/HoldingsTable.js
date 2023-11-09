@@ -1,8 +1,10 @@
 import React from 'react';
 import LineGraph from './LineGraph';
+import { useNavigate } from 'react-router-dom';
 import '../css/HoldingsTable.css';
 
 const HoldingsTable = ({ data, lineData }) => {
+  const navigate = useNavigate();
   if (!data || !data.columns || !Array.isArray(data.columns) || data.columns.length === 0) {
     return <div>No data available</div>;
   }
@@ -19,6 +21,13 @@ const HoldingsTable = ({ data, lineData }) => {
     const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
     return capitalizedWords.join(' ');
   };
+
+  const handleItemClick = (e, symbol) => {
+    e.preventDefault();
+    //navigate(`/hello/${symbol}`);
+    window.open(`/hello/${symbol}`, '_blank','rel=   noopener noreferrer');
+  };
+  
 
   const formatCellValue = (value, columnIndex, rowIndex) => {
     if (columnIndex === filteredColumns.length - 1 || columnIndex === filteredColumns.length - 2) {
@@ -39,6 +48,13 @@ const HoldingsTable = ({ data, lineData }) => {
         );
       }
     }
+    if (columnIndex === 1) {  // Assuming second column
+      return (
+          <a href="#" className="second-column-link" onClick={(e) => handleItemClick(e, value)}>
+              {value}
+          </a>
+      );
+      }
 
     if (columnIndex === filteredColumns.length) {
       return (

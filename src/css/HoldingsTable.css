@@ -80,3 +80,12 @@
   background-color: lightcoral; /* Adjust as needed */
   width: calc((var(--column-6-value) / var(--column-6-total)) * 100%);
 }
+
+.second-column-link {
+  color: lightblue;
+  text-decoration: none;  /* optional: to remove the underline from the hyperlink */
+}
+
+.second-column-link:hover {
+  text-decoration: underline;  /* optional: underline the link on hover */
+}
