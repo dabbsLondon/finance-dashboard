@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: #202020;
+  background-color: #141519;
   padding: 16px;
   border-bottom: 1px solid white;
   overflow: auto; /* Add this line to enable horizontal scrolling */
@@ -18,8 +18,8 @@
 }
 
 .logo-image {
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   margin-right: 8px;
   flex-shrink: 0; /* Add this line to prevent the logo from shrinking */
 }
